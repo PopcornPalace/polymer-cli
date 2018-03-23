@@ -180,7 +180,7 @@ export class BuildCommand implements Command {
       const promises = config.builds.map(
           (buildOptions) => build(buildOptions, polymerProject));
       promises.push(mzfs.writeFile(
-          path.join(mainBuildDirectoryName, 'polymer.json'), config.toJSON()));
+          path.join(mainBuildDirectoryName, process.env.POLYMER_JSON || 'polymer.json'), config.toJSON()));
       await Promise.all(promises);
       return;
     }

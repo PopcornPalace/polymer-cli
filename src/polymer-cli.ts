@@ -96,7 +96,7 @@ export class PolymerCli {
           {config: this.defaultConfigOptions});
     } else {
       this.defaultConfigOptions =
-          ProjectConfig.loadOptionsFromFile('polymer.json')!;
+          ProjectConfig.loadOptionsFromFile(process.env.POLYMER_JSON || 'polymer.json')!;
       if (this.defaultConfigOptions) {
         logger.debug(
             'got default config from polymer.json file:',
