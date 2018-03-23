@@ -26,7 +26,7 @@ import {waitFor, pipeStreams} from './streams';
 import {loadServiceWorkerConfig} from './load-config';
 
 const logger = logging.getLogger('cli.build.build');
-export const mainBuildDirectoryName = 'build';
+export const mainBuildDirectoryName = process.env.BUILD_DIR || 'build';
 
 
 /**
