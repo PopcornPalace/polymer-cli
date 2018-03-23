@@ -9,6 +9,7 @@ declare module 'bower' {
     interactive?: boolean;
     save?: boolean;
     offline?: boolean;
+    force?: boolean;
   }
 
   export const commands: {
