@@ -37,7 +37,12 @@ export const mainBuildDirectoryName = process.env.BUILD_DIR || 'build';
 export async function build(
     options: ProjectBuildOptions,
     polymerProject: PolymerProject): Promise<void> {
-  const buildName = options.name || 'default';
+      const buildName = options.name || 'default';
+
+    if(process.env.BUNDLE_CONFIGS){
+      options.bundle = JSON.parse(process.env.BUNDLE_CONFIGS)
+    }
+
   const optimizeOptions:
       OptimizeOptions = {css: options.css, js: options.js, html: options.html};
 
