@@ -39,19 +39,19 @@ export async function build(
     polymerProject: PolymerProject): Promise<void> {
       const buildName = options.name || 'default';
 
-    if(process.env.BUNDLE_CONFIGS){
+    if(process.env.BUNDLE_CONFIGS && options.bundle){
       options.bundle = JSON.parse(process.env.BUNDLE_CONFIGS)
     }
 
-    if(process.env.JS_CONFIGS){
+    if(process.env.JS_CONFIGS && options.js){
       options.js = JSON.parse(process.env.JS_CONFIGS)
     }
 
-    if(process.env.CSS_CONFIGS){
+    if(process.env.CSS_CONFIGS && options.css){
       options.css = JSON.parse(process.env.CSS_CONFIGS)
     }
 
-    if(process.env.HTML_CONFIGS){
+    if(process.env.HTML_CONFIGS && options.html){
       options.html = JSON.parse(process.env.HTML_CONFIGS)
     }
 
