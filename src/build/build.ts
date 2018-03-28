@@ -43,6 +43,18 @@ export async function build(
       options.bundle = JSON.parse(process.env.BUNDLE_CONFIGS)
     }
 
+    if(process.env.JS_CONFIGS){
+      options.js = JSON.parse(process.env.JS_CONFIGS)
+    }
+
+    if(process.env.CSS_CONFIGS){
+      options.css = JSON.parse(process.env.CSS_CONFIGS)
+    }
+
+    if(process.env.HTML_CONFIGS){
+      options.html = JSON.parse(process.env.HTML_CONFIGS)
+    }
+
   const optimizeOptions:
       OptimizeOptions = {css: options.css, js: options.js, html: options.html};
 
