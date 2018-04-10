@@ -202,7 +202,7 @@ export function getOptimizeStreams(options?: OptimizeOptions):
   if (options.html && options.html.minify) {
     streams.push(gulpif(matchesExtAndNotExcluded('.html', options.html.minify),
         new HTMLOptimizeTransform(
-            {collapseWhitespace: true, removeComments: true})));
+            {collapseWhitespace: false, removeComments: true})));
   }
   if (options.css && options.css.minify) {
     streams.push(
